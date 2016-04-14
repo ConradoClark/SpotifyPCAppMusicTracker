@@ -70,6 +70,8 @@ namespace SpotifyPCAppMusicTracker
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             process = Process.GetProcessesByName("spotify").Concat(Process.GetProcessesByName("Spotify")).FirstOrDefault(p => p.SessionId == currentSessionId);
+            if (process == null) return;
+
             string title = process.MainWindowTitle;
             if (currentTitle == title) return;
 
