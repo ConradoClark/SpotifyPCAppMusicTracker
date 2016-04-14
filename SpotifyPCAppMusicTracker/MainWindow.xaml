@@ -18,7 +18,7 @@
         </Grid.ContextMenu>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"></ColumnDefinition>
-            <ColumnDefinition Width="40"></ColumnDefinition>
+            <ColumnDefinition Width="48"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="10"></ColumnDefinition>
         </Grid.ColumnDefinitions>
@@ -26,7 +26,7 @@
             <RowDefinition Height="30" />
             <RowDefinition Height="30" />
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Name="img" Source="img/Sound-on-icon.png">
+        <Image Grid.Row="0" VerticalAlignment="Center" Grid.Column="1" Grid.RowSpan="2" Name="img" Source="img/Sound-on-icon.png">
         </Image>
         <Label Grid.Row="0" Grid.Column="2" Name="lblTitle" HorizontalAlignment="Right" Padding="0" FontSize="20"  Margin="0,0,5,0"  Foreground="White">Song Name</Label>
         <Label Grid.Row="1" Grid.Column="2" Name="lblAuthor" HorizontalAlignment="Right" Padding="0" FontSize="16" Margin="0,0,5,0" Foreground="White">Artist Name</Label>
