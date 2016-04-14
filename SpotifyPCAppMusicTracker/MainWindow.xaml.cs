@@ -1,22 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SpotifyPCAppMusicTracker
 {
@@ -25,13 +17,13 @@ namespace SpotifyPCAppMusicTracker
     /// </summary>
     public partial class MainWindow : Window
     {
-        Process process;
-        ImageSource off, on;
-        string currentTitle;
-        int currentSessionId;
+        private Process process;
+        private ImageSource off, on;
+        private string currentTitle;
+        private int currentSessionId;
 
-        double desiredWidth;
-        double elapsedTime;
+        private double desiredWidth;
+        private double elapsedTime;
 
         public MainWindow()
         {
@@ -109,10 +101,6 @@ namespace SpotifyPCAppMusicTracker
             }
         }
 
-        private void Window_Deactivated(object sender, EventArgs e)
-        {
-        }
-
         private double MeasureString(string candidate)
         {
             var formattedText = new FormattedText(
@@ -126,7 +114,7 @@ namespace SpotifyPCAppMusicTracker
             return formattedText.Width + 25;
         }
 
-        double lerp(double source, double dest, double t)
+        private double lerp(double source, double dest, double t)
         {
             return (1 - t) * source + t * dest;
         }
@@ -144,20 +132,19 @@ namespace SpotifyPCAppMusicTracker
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (grid.IsHitTestVisible) ;
             this.DragMove();
         }
 
         public static class WindowsServices
         {
-            const int WS_EX_TRANSPARENT = 0x00000020;
-            const int GWL_EXSTYLE = (-20);
+            private const int WS_EX_TRANSPARENT = 0x00000020;
+            private const int GWL_EXSTYLE = (-20);
 
             [DllImport("user32.dll")]
-            static extern int GetWindowLong(IntPtr hwnd, int index);
+            private static extern int GetWindowLong(IntPtr hwnd, int index);
 
             [DllImport("user32.dll")]
-            static extern int SetWindowLong(IntPtr hwnd, int index, int newStyle);
+            private static extern int SetWindowLong(IntPtr hwnd, int index, int newStyle);
 
             public static void SetWindowExTransparent(IntPtr hwnd)
             {

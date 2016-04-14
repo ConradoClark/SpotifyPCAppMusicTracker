@@ -8,7 +8,7 @@
           ResizeMode="NoResize"
           ShowInTaskbar="False"
           WindowStartupLocation="CenterScreen"
-        Background="Lime" 
+        Background="Lime"
         Height="60" Width="800" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid Name="grid" HorizontalAlignment="Right" Background="Black">
         <Grid.ContextMenu>
@@ -23,8 +23,8 @@
             <ColumnDefinition Width="10"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
         <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Name="img" Source="img/Sound-on-icon.png">
         </Image>
